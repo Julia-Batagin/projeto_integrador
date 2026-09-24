@@ -16,6 +16,24 @@ function cadastrar($conexao, $nome, $nasc, $turma, $ativo)
 
 } 
 
+function relatorio($conexao){
+    $sql = "SELECT * FROM alunos";
+    
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+
+    $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach($alunos as $aluno){
+        echo "<hr>";
+        echo "ID: {$aluno['id']}<br>";
+        echo "Nome: {$aluno['nome']}<br>";
+        echo "Nascimento: {$aluno['nasc']}<br>";
+        echo "Turma: {$aluno['turma']}<br>";
+        echo "Ativo: {$aluno['ativo']}<br>";
+}
+}
+
 function excluir($conexao, $id){
     $sql = "DELETE FROM alunos WHERE id = :id";
 
