@@ -1,0 +1,20 @@
+body {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(127, 174, 189);
+}
+
+body main {
+    background-color: antiquewhite;
+    border-radius: 30px;
+}
+
+header {
+    border: 2px solid burlywood;
+    border-radius: 30px;
+}
+footer {
+    border: 2px solid burlywood;
+    border-radius: 30px;
+}
