@@ -1,39 +1,71 @@
-# Mini Sistema: Gerenciamento de Alunos.
+# Projeto Integrador
 
 ## CRUD Utilizando HTML + PHP + POSTGRESQL
 
 ### Objetivos:
  
-1. Cadastrar Aluno:
-- Receber Nome, Turma, Nascimento, Ativo.
+# Projeto Integrador
 
-2. Excluir Aluno:
-- Excluir um aluno a partir do ID.
+## Biblioteca Digital Utilizando HTML + PHP + POSTGRESQL
 
-3. Relátorio:
-- Listar todos os alunos cadastrados no sistema.
+### Objetivos:
 
-4. Consultar Aluno:
-- Consulta de um aluno específico a partir do ID.
+1. Cadastrar usuários:
+- Receber Nome Completo , E-mail, Senha, Nascimento.
+- Validar os dados informados.
+- Salvar os usuários no banco de dados.
 
-5. Atualizar Aluno:
-- Atualizar aluno a partir do ID.
+2. Fazer login dos usuários:
+- Receber E-mail e Senha.
+- Verificar os dados cadastrados no banco.
+- Criar uma sessão para o usuário.
 
-### Sistema de login.
-RF Descrição
-1. Tabela usuários 
+3. Cadastrar livros:
+- Receber Título, Autor, Categoria, Ano, Quantidade e Imagem da capa.
+- Salvar os livros no banco de dados.
 
-```mermaid
-erDiagram
-usuarios{
-    id INT PK
-    email VARCHAR(60)
-    nome VARCHAR(12) 
-}
-```
+4. Listar livros:
+- Mostrar os livros cadastrados.
+- Exibir Título, Autor, Categoria, Ano e Imagem.
+- Permitir visualizar os livros disponíveis.
 
-2. Cadastro de usuários
+5. Pesquisar livros:
+- Permitir pesquisar livros pelo Título ou Autor.
+- Mostrar os resultados encontrados.
 
-3. Criar login
+6. Visualizar informações do livro:
+- Exibir as informações completas do livro selecionado.
+- Mostrar a capa e os dados cadastrados.
 
-4. Verificar se os usuários são validos em todas as paginas
+7. Editar livros:
+- Permitir alterar as informações dos livros cadastrados.
+- Atualizar os dados no banco de dados.
+
+8. Excluir livros:
+- Permitir excluir livros cadastrados.
+- Solicitar confirmação antes da exclusão.
+
+9. Criar área administrativa:
+- Criar acesso restrito para o administrador.
+- Permitir gerenciar os livros cadastrados.
+- Permitir visualizar e gerenciar os usuários.
+
+10. Controlar acesso:
+- Verificar se o usuário está logado.
+- Restringir o acesso às páginas administrativas.
+- Criar diferentes permissões para usuário e administrador.
+
+11. Fazer logout:
+- Encerrar a sessão do usuário.
+- Encerrar a sessão do administrador.
+- Redirecionar para a página de login.
+
+12. Testar o sistema:
+- Testar cadastro.
+- Testar login.
+- Testar cadastro de livros.
+- Testar pesquisa.
+- Testar edição.
+- Testar exclusão.
+- Testar permissões.
+- Testar logout.

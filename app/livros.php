@@ -7,11 +7,11 @@ require_once __DIR__ . '/../login/verefica_user.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/mini_sistema/style/style.css">
-    <title>Cadastro Aluno</title>
+    <link rel="stylesheet" href="/Projeto_Integrador/style/style.css">
+    <title>Cadastro Cliente</title>
 </head>
 <body>
-    <?php include __DIR__ . '/../includes/header.php'; ?><br>
+   
     <form action="" method="post">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome"><br>
@@ -38,7 +38,7 @@ require_once __DIR__ . '/../login/verefica_user.php';
     var_dump($_POST);
     cadastrar($conexao, $_POST['nome'], $_POST['nasc'], $_POST['turma'], $_POST['ativo']);
     }
-    include __DIR__ . '/../includes/footer.php'; ?>
+    ?>
     
 </body>
 </html>

@@ -4,5 +4,5 @@ if(session_status() == PHP_SESSION_NONE){
 } 
 $_SESSION = array();
 session_destroy();
-header("Location: /mini_sistema/index.php");
+header("Location: /Projeto_Integrador/index.php");
 ?>

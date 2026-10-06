@@ -1,42 +1,65 @@
-<?php 
-require_once __DIR__. '/../includes/functions.php';
+<?php
+require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../database/connect.php';
 
 session_start();
 ?>
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+    $usuario = consultar_user($conexao, $_POST['email']);
+    if ($usuario != false) {
+        if ($usuario['email'] == $_POST['email'] && $usuario['senha'] == $_POST['senha']) {
+            $_SESSION['id'] = $usuario['id'];
+            header("Location: /livros.php");
+            exit;
+        } else {
+            echo "Usuário ou senha inválido";
+        }
+    }
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/mini_sistema/style/style.css">
     <title>Login</title>
+    <link rel="stylesheet" href="/../style/style.css">
 </head>
 <body>
-    <?php include '../includes/header.php'; ?>
     <main>
-        <h1>Faça o login para continuar</h1>
-        <form action="" method="post">
-            <label for="email">E-mail: </label>
-            <input type="email" name="email" id="email" placeholder="Insira o email" required ><br>
-            <label for="senha">Senha: </label>
-            <input type="password" name="senha" id="senha"  placeholder="Insira sua senha."  required><br>
-            <input type="submit" value="Entrar">
-        </form>
-        <?php 
-        if($_SERVER['REQUEST_METHOD'] == "POST"){
-            $usuario = consultar_user($conexao, $_POST['email']);
-            if($usuario['email'] == $_POST['email'] && $usuario['senha'] == $_POST['senha']){
-                $_SESSION['id'] = $usuario['id'];
-                echo "Usuário logado!";
-                header("Location: /mini_sistema/index.php");
-            }else {
-                echo "Usuário ou senha inválido";
-            }
-        }
-        ?>
+        <div class="login">
+
+            <h1>Login</h1>
+
+            <form action="" method="POST">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Insira seu email" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
+
+                <button type="submit">Entrar</button>
+
+            </form>
+
+            <p>Ainda não possui uma conta?</p><br>
+
+            <a href="/login/cadastrar.php">Cadastre-se</a>
+
+            <br><br>
+
+            <a href="/index.php">Voltar</a>
+
+        </div>
     </main>
-    <?php include __DIR__. '/../includes/footer.php'; ?>
-    
+
 </body>
 </html>

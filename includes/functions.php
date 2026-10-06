@@ -78,19 +78,25 @@ function atualizar($conexao, $id, $nome, $nasc, $turma, $ativo){
 
 }
 
-//Função para login:
-function cadastrar_user($conexao, $email, $senha)
+
+//Função para cadastro de usuário:
+function cadastrar_user($conexao, $nome, $email, $nascimento, $senha)
 {
-    $sql = "INSERT INTO usuarios (email, senha) VALUES (:email, :senha)";
+    $sql = "INSERT INTO usuarios (nome, email, nascimento, senha)
+            VALUES (:nome, :email, :nascimento, :senha)";
 
     $stmt = $conexao->prepare($sql);
-    $stmt->bindParam(":email", $email);
-    $stmt->bindParam(":senha", $senha);
-  
-    $stmt->execute();
-    echo "Usuário cadastrado com sucesso!";
 
-} 
+    $stmt->bindParam(":nome", $nome);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":nascimento", $nascimento);
+    $stmt->bindParam(":senha", $senha);
+
+    $stmt->execute();
+
+    echo "Usuário cadastrado com sucesso!";
+}
+
 
 function consultar_user($conexao, $email){
    
