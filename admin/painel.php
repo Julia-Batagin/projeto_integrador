@@ -26,7 +26,7 @@ $resultado = $conexao->query($sql);
 
 </head>
 <body>
-
+    
     <header>
 
         <h1>EntreCapítulos</h1>
@@ -43,7 +43,7 @@ $resultado = $conexao->query($sql);
         <h2>Painel do Administrador</h2>
 
         <p>
-            Olá, <?php echo $_SESSION['admin_nome']; ?>!
+          Olá, <?php echo $_SESSION['admin_nome']; ?>!
         </p>
 
         <a href="cadastrar_livro.php" class="botao-admin">
@@ -60,6 +60,7 @@ $resultado = $conexao->query($sql);
 
                     <h3>
                         <?php echo $livro['titulo']; ?>
+            
                     </h3>
 
                     <p>

@@ -43,4 +43,15 @@ function consultar_user($conexao, $email)
     }
 }
 
+// CONSULTAR LIVRO
+
+function consultar_livros($conexao)
+{
+    $sql = "SELECT * FROM livros ORDER BY id";
+    $resultado = $conexao->query($sql);
+
+    return $resultado;
+}
+
 ?>
+

@@ -105,9 +105,7 @@ $resultado = $conexao->query($sql);
 
         <br><br> 
 
-         <div style="text-align: center; color: rgb(127, 174, 189);">
-                    <a href="/projeto_integrador/index.php">Voltar</a>
-        </div>
+        <a href="/projeto_integrador/index.php" class="voltar" >Voltar</a>
 
     </main>
 </body>
