@@ -1,3 +1,7 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +16,20 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 header {
     background-color: rgb(127, 174, 189);
@@ -29,15 +47,10 @@ header p {
     font-size: 18px;
 }
 
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-}
 
-/* Página inicial */
+/* =========================
+   PÁGINA INICIAL
+========================= */
 
 .inicio {
     background-color: burlywood;
@@ -61,6 +74,29 @@ main {
     margin-bottom: 30px;
 }
 
+.inicio button {
+    background-color: rgb(127, 174, 189);
+    color: antiquewhite;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.inicio button:hover {
+    background-color: antiquewhite;
+    color: rgb(127, 174, 189);
+    border: 2px solid rgb(127, 174, 189);
+}
+
+
+/* =========================
+   BOTÕES GERAIS
+========================= */
+
 .botao {
     display: inline-block;
     background-color: rgb(127, 174, 189);
@@ -78,14 +114,10 @@ main {
     border: 2px solid rgb(127, 174, 189);
 }
 
-footer {
-    background-color: rgb(127, 174, 189);
-    color: antiquewhite;
-    text-align: center;
-    padding: 15px;
-}
 
-/* Tela de Login */
+/* =========================
+   LOGIN E CADASTRO
+========================= */
 
 .login {
     background-color: burlywood;
@@ -154,6 +186,11 @@ footer {
     text-decoration: underline;
 }
 
+
+/* =========================
+   MENSAGENS
+========================= */
+
 .login .sucesso {
     color: rgb(127, 174, 189);
     background-color: antiquewhite;
@@ -171,3 +208,365 @@ footer {
     margin-bottom: 20px;
     font-weight: bold;
 }
+
+
+/* =========================
+   TÍTULOS DAS PÁGINAS
+========================= */
+
+main h2 {
+    color: rgb(127, 174, 189);
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   VITRINE DE LIVROS
+========================= */
+
+.livros {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 0 auto;
+}
+
+.card-livro {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.card-livro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.20);
+}
+
+.card-livro h3 {
+    color: rgb(127, 174, 189);
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.card-livro p {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.card-livro strong {
+    color: #555;
+}
+
+
+/* =========================
+   DISPONIBILIDADE DOS LIVROS
+========================= */
+
+.card-livro .disponivel {
+    background-color: #e4f1e5;
+    color: rgb(55, 120, 70);
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.card-livro .indisponivel {
+    background-color: #f5dddd;
+    color: #8b0000;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   BOTÃO ALUGAR LIVRO
+========================= */
+
+.card-livro button {
+    width: 100%;
+    background-color: rgb(127, 174, 189);
+    color: antiquewhite;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card-livro button:hover {
+    background-color: antiquewhite;
+    color: rgb(127, 174, 189);
+    border: 2px solid rgb(127, 174, 189);
+}
+
+
+/* =========================
+   TERMOS DE EMPRÉSTIMO
+========================= */
+
+.termos {
+    background-color: burlywood;
+    width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.termos h2 {
+    color: rgb(127, 174, 189);
+    margin-bottom: 25px;
+}
+
+.termos p {
+    color: #333;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.termos button {
+    background-color: rgb(127, 174, 189);
+    color: antiquewhite;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.termos button:hover {
+    background-color: antiquewhite;
+    color: rgb(127, 174, 189);
+    border: 2px solid rgb(127, 174, 189);
+}
+
+
+/* =========================
+   PAINEL DO ADMINISTRADOR
+========================= */
+
+.painel-admin {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.painel-admin > p {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+/* Botão cadastrar */
+
+.botao-admin {
+    display: block;
+    width: 220px;
+    margin: 0 auto 30px auto;
+    padding: 12px;
+    background-color: rgb(127, 174, 189);
+    color: antiquewhite;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.botao-admin:hover {
+    background-color: antiquewhite;
+    color: rgb(127, 174, 189);
+    border: 2px solid rgb(127, 174, 189);
+}
+
+
+/* Livros do administrador */
+
+.admin-livros {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* Card do administrador */
+
+.card-admin {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-admin h3 {
+    color: rgb(127, 174, 189);
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.card-admin p {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   BOTÕES DO ADMINISTRADOR
+========================= */
+
+.botoes-admin {
+    margin-top: 20px;
+}
+
+.botao-editar,
+.botao-excluir {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.botao-editar {
+    background-color: rgb(127, 174, 189);
+    color: antiquewhite;
+}
+
+.botao-excluir {
+    background-color: #b85c5c;
+    color: white;
+}
+
+.botao-editar:hover {
+    background-color: antiquewhite;
+    color: rgb(127, 174, 189);
+    border: 2px solid rgb(127, 174, 189);
+}
+
+.botao-excluir:hover {
+    background-color: #8b0000;
+}
+
+
+/* =========================
+   BOTÃO SAIR
+========================= */
+
+.sair-admin {
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: rgb(127, 174, 189);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.sair-admin:hover {
+    background-color: rgb(100, 145, 160);
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.voltar {
+    display: block !important;
+    width: 150px !important;
+    margin: 20px auto !important;
+    padding: 10px !important;
+    background-color: rgb(127, 174, 189) !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    background-color: rgb(127, 174, 189);
+    color: antiquewhite;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .livros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-livros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 20px;
+    }
+
+    .inicio {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .login {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .termos {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .livros {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-livros {
+        grid-template-columns: 1fr;
+    }
+
+}
+
