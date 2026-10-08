@@ -20,9 +20,6 @@ $id = $_GET['id'];
 // Cria o comando SQL para buscar o livro pelo ID.
 $sql = "SELECT * FROM livros WHERE id = :id";
 
-
-// Prepara o comando SQL para ser executado.
-// $conexao vem do arquivo connect.php.
 $stmt = $conexao->prepare($sql);
 
 
@@ -100,20 +97,10 @@ if (isset($_POST['editar'])) {
 <html lang="pt-br">
 
 <head>
-
-    <!-- Define o conjunto de caracteres usado na página. -->
     <meta charset="UTF-8">
-
-
-    <!-- Faz a página se adaptar a diferentes tamanhos de tela. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <!-- Importa o arquivo CSS do projeto. -->
     <link rel="stylesheet" href="/style/style.css">
 
-
-    <!-- Título que aparece na aba do navegador. -->
     <title>Editar Livro</title>
 
 </head>
@@ -124,11 +111,8 @@ if (isset($_POST['editar'])) {
     <!-- Cabeçalho da página. -->
     <header>
 
-        <!-- Nome da biblioteca. -->
         <h1>EntreCapítulos</h1>
 
-
-        <!-- Indica que esta é uma área administrativa. -->
         <p>Área do Administrador</p>
 
     </header>
