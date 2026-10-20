@@ -345,72 +345,169 @@ projeto_integrador/
 
 ### Passo 1 — Baixar o projeto
 
-Clone o repositório e entre na pasta do projeto:
+### Gerando o Backup
+
+Para gerar um novo backup do banco PostgreSQL, execute o comando abaixo na raiz do projeto:
 
 ```bash
-git clone https://github.com/Julia-Batagin/projeto_integrador.git
-cd projeto_integrador
+pg_dump -h 192.168.10.30 -U biblioteca_user -d biblioteca -F p -f database/dump.sql
 ```
 
-### Passo 2 — Criar o banco de dados
+Nesse comando, são utilizados o endereço do servidor, o usuário e o nome do banco de dados configurados para o projeto.
 
-No PostgreSQL, crie um banco de dados chamado `biblioteca` ou utilize o nome configurado no arquivo de conexão.
+**Parâmetros utilizados:**
 
-Exemplo:
+- `-h`: informa o endereço do servidor PostgreSQL.
+- `-U`: define o usuário utilizado para acessar o banco.
+- `-d`: especifica o nome do banco de dados.
+- `-F p`: define o formato de saída como SQL em texto puro.
+- `-f`: indica o caminho e o nome do arquivo de destino.
+
+O PostgreSQL poderá solicitar a senha do usuário para realizar a exportação. O usuário precisa ter as permissões necessárias para acessar os dados.
+
+### Conferindo o Backup
+
+Para verificar se o arquivo existe e consultar seu tamanho, execute:
+
+```bash
+ls -lh database/dump.sql
+```
+
+Para localizar as instruções de criação de tabelas no arquivo SQL, utilize:
+
+```bash
+grep -n "CREATE TABLE" database/dump.sql
+```
+
+Esses dois comandos são voltados para terminais Linux. No Windows, é possível verificar o arquivo pelo Explorador de Arquivos ou utilizar o terminal Git Bash.
+
+### Criando um Usuário e um Banco de Dados
+
+Caso seja necessário configurar o banco em outro ambiente, acesse o PostgreSQL com um usuário administrador:
+
+```bash
+psql -U postgres
+```
+
+Em seguida, crie um usuário e um banco de dados para a aplicação:
 
 ```sql
-CREATE DATABASE biblioteca;
+CREATE USER biblioteca_user WITH PASSWORD 'DEFINA_UMA_SENHA_SEGURA';
+CREATE DATABASE biblioteca OWNER biblioteca_user;
 ```
 
-Depois, crie as tabelas necessárias de acordo com a estrutura SQL do projeto.
+**Atenção:** execute esses comandos somente se o usuário e o banco ainda não existirem e se você tiver as permissões administrativas necessárias. Utilize uma senha segura e não a publique no GitHub.
 
-### Passo 3 — Configurar a conexão
+### Restaurando o Banco de Dados
 
-Abra o arquivo `database/connect.php` e confira as configurações de conexão com o PostgreSQL.
+Depois de preparar o banco de destino, o arquivo SQL pode ser importado com o comando:
 
-Exemplo de configuração:
-
-```php
-<?php
-
-$host = "localhost";
-$dbname = "biblioteca";
-$port = "5432";
-$user = "SEU_USUARIO";
-$pass = "SUA_SENHA";
-
-try {
-    $conexao = new PDO(
-        "pgsql:host=$host;port=$port;dbname=$dbname",
-        $user,
-        $pass
-    );
-} catch (PDOException $e) {
-    die("Não foi possível conectar ao banco de dados.");
-}
+```bash
+psql -h 192.168.10.30 -U biblioteca_user -d biblioteca -f database/dump.sql
 ```
 
-Substitua `SEU_USUARIO` e `SUA_SENHA` pelas credenciais do seu ambiente. Não publique senhas reais no GitHub.
+A restauração pode apresentar conflitos caso as tabelas já existam ou o usuário não tenha as permissões necessárias. Para evitar interferir nos dados utilizados pela aplicação, prefira testar a restauração em um banco separado antes de realizá-la no banco principal.
 
-### Passo 4 — Iniciar o servidor
+---
 
-No terminal, dentro da pasta do projeto, execute:
+## ▶️ Como Executar o Projeto ▶️
+
+### Pré-requisitos
+
+Antes de acessar o sistema EntreCapítulos, verifique se o ambiente possui:
+
+- PHP instalado e configurado no servidor.
+- PostgreSQL instalado e em execução no servidor do banco de dados.
+- Extensão `pdo_pgsql` habilitada no PHP.
+- Servidor web, como Apache, configurado para executar PHP.
+- Navegador atualizado.
+- Acesso à rede em que o servidor está disponível.
+
+### Acessando o Projeto
+
+O projeto está disponível no endereço abaixo:
+
+**http://192.168.10.30/projeto_integrador**
+
+Para acessar, abra o navegador e informe esse endereço. O computador precisa estar conectado a uma rede que consiga alcançar o servidor.
+
+### Configurando o Banco de Dados
+
+A aplicação utiliza o PostgreSQL para armazenar as informações dos usuários, administradores, livros e empréstimos.
+
+Os parâmetros de conexão devem estar configurados no arquivo `database/connect.php`, incluindo:
+
+- Endereço do servidor: `192.168.10.30`
+- Banco de dados: `biblioteca`
+- Porta: `5432`
+- Usuário: `biblioteca_user`
+
+A senha deve ser configurada de forma segura no ambiente. Evite deixar credenciais diretamente no código publicado no GitHub.
+
+Caso seja necessário restaurar os dados iniciais, utilize o arquivo `database/dump.sql`, seguindo os procedimentos de backup e restauração descritos anteriormente.
+
+### Iniciando o Servidor
+
+Como o projeto está configurado para ser acessado pelo endereço `192.168.10.30/projeto_integrador`, o servidor web precisa estar configurado para disponibilizar a pasta do projeto nesse caminho.
+
+Se estiver executando o projeto localmente apenas para testes, é possível iniciar o servidor embutido do PHP na pasta do projeto:
 
 ```bash
 php -S localhost:8000
 ```
 
-Deixe o terminal aberto enquanto utiliza o sistema.
-
-### Passo 5 — Acessar no navegador
-
-Abra o endereço:
+Depois, acesse:
 
 ```text
 http://localhost:8000
 ```
 
-O banco de dados precisa estar em execução e a conexão deve estar configurada corretamente para que as funções que dependem do PostgreSQL funcionem.
+Esse endereço é destinado aos testes locais e não substitui o endereço principal utilizado no servidor da biblioteca.
+
+---
+
+## ✔️ Testes e Verificação ✔️
+
+Após acessar o projeto, é importante verificar se as principais funcionalidades estão funcionando corretamente.
+
+### Verificações Gerais
+
+- Confirmar se a página inicial é carregada sem erros.
+- Verificar se os estilos CSS são aplicados corretamente.
+- Testar os links e a navegação entre as páginas.
+- Conferir se os arquivos PHP são executados pelo servidor.
+
+### Verificações do Banco de Dados
+
+- Testar a conexão com o PostgreSQL.
+- Verificar se as tabelas necessárias existem.
+- Conferir se os livros cadastrados são exibidos corretamente.
+- Testar as consultas de usuários, livros e empréstimos.
+- Verificar as operações de cadastro, edição e exclusão disponíveis no sistema.
+- Confirmar se a quantidade disponível de livros é atualizada após um empréstimo.
+
+### Verificações de Autenticação
+
+- Testar o cadastro de um novo usuário.
+- Verificar o login com credenciais válidas.
+- Conferir o tratamento de credenciais inválidas.
+- Verificar se as páginas restritas exigem login.
+- Testar o acesso à área administrativa.
+- Conferir se o encerramento da sessão funciona corretamente.
+
+### Verificações dos Empréstimos
+
+- Conferir se um usuário consegue solicitar um livro disponível.
+- Verificar se o sistema informa quando um livro está indisponível.
+- Confirmar se o empréstimo é registrado no banco de dados.
+- Conferir se os empréstimos aparecem no relatório administrativo, caso essa funcionalidade esteja implementada.
+
+### Segurança e Organização
+
+- Não publicar senhas do banco de dados no GitHub.
+- Não enviar o arquivo `database/connect.php` com credenciais reais.
+- Evitar publicar o arquivo `database/dump.sql` quando ele contiver dados pessoais ou informações privadas.
+- Manter uma cópia de segurança atualizada do banco de dados.
 
 ## 10. Projeto Integrador
 
