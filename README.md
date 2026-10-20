@@ -466,49 +466,6 @@ Esse endereço é destinado aos testes locais e não substitui o endereço princ
 
 ---
 
-## ✔️ Testes e Verificação ✔️
-
-Após acessar o projeto, é importante verificar se as principais funcionalidades estão funcionando corretamente.
-
-### Verificações Gerais
-
-- Confirmar se a página inicial é carregada sem erros.
-- Verificar se os estilos CSS são aplicados corretamente.
-- Testar os links e a navegação entre as páginas.
-- Conferir se os arquivos PHP são executados pelo servidor.
-
-### Verificações do Banco de Dados
-
-- Testar a conexão com o PostgreSQL.
-- Verificar se as tabelas necessárias existem.
-- Conferir se os livros cadastrados são exibidos corretamente.
-- Testar as consultas de usuários, livros e empréstimos.
-- Verificar as operações de cadastro, edição e exclusão disponíveis no sistema.
-- Confirmar se a quantidade disponível de livros é atualizada após um empréstimo.
-
-### Verificações de Autenticação
-
-- Testar o cadastro de um novo usuário.
-- Verificar o login com credenciais válidas.
-- Conferir o tratamento de credenciais inválidas.
-- Verificar se as páginas restritas exigem login.
-- Testar o acesso à área administrativa.
-- Conferir se o encerramento da sessão funciona corretamente.
-
-### Verificações dos Empréstimos
-
-- Conferir se um usuário consegue solicitar um livro disponível.
-- Verificar se o sistema informa quando um livro está indisponível.
-- Confirmar se o empréstimo é registrado no banco de dados.
-- Conferir se os empréstimos aparecem no relatório administrativo, caso essa funcionalidade esteja implementada.
-
-### Segurança e Organização
-
-- Não publicar senhas do banco de dados no GitHub.
-- Não enviar o arquivo `database/connect.php` com credenciais reais.
-- Evitar publicar o arquivo `database/dump.sql` quando ele contiver dados pessoais ou informações privadas.
-- Manter uma cópia de segurança atualizada do banco de dados.
-
 ## 10. Projeto Integrador
 
 O EntreCapítulos foi desenvolvido para aplicar os conhecimentos de desenvolvimento web, programação em PHP, estruturação de páginas com HTML e CSS e armazenamento de dados com PostgreSQL.
