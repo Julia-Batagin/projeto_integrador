@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Importa o arquivo CSS para estilizar a página. -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 
     <!-- Define o título da aba do navegador. -->
     <title>Cadastro</title>
@@ -175,9 +175,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </a>
 
         </div>
-
     </main>
-
 </body>
-
 </html>

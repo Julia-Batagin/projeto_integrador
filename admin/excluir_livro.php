@@ -9,7 +9,7 @@ require_once __DIR__ . '/../database/connect.php';
 if (!isset($_SESSION['admin_id'])) {
 
     // Se não estiver logado, envia para a página de login.
-    header("Location: /login/login.php");
+    header("Location: /projeto_integrador/login/login.php");
 
     exit;
 }

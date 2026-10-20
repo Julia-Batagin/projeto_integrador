@@ -16,7 +16,7 @@ $resultado = $conexao->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 
     <!-- Define o título da aba do navegador. -->
     <title>Biblioteca Virtual</title>

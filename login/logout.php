@@ -14,7 +14,7 @@ $_SESSION = array();
 session_destroy();
 
 // Redireciona o usuário para a página inicial do site.
-header("Location: /../index.php");
+header("Location: /projeto_integrador/index.php");
 
 // Encerra a execução do código após o redirecionamento.
 exit;

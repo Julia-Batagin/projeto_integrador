@@ -16,7 +16,7 @@ $_SESSION = array();
 session_destroy();
 
 // Envia o administrador de volta para a página inicial.
-header("Location: /../index.php");
+header("Location: /projeto_integrador/index.php");
 
 exit;
 

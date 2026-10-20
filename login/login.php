@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
             // Redireciona o usuário para a página dos livros.
-            header("Location: /client/livros.php");
+            header("Location: /projeto_integrador/client/livros.php");
 
 
             // Interrompe a execução do código após o redirecionamento.
@@ -68,25 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="pt-br">
 
 <head>
-
-    <!-- Define a codificação dos caracteres da página. -->
     <meta charset="UTF-8">
-
-
-    <!-- Adapta a página para diferentes tamanhos de tela. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <!-- Define o título da página na aba do navegador. -->
     <title>Login</title>
 
 
     <!-- Importa o arquivo CSS do projeto. -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 
 </head>
-
-
 <body>
 
     <!-- Conteúdo principal da página. -->
@@ -152,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
             <!-- Link para a página de cadastro. -->
-            <a href="/login/cadastrar.php">
+            <a href="/projeto_integrador/login/cadastrar.php">
                 Cadastre-se
             </a>
 

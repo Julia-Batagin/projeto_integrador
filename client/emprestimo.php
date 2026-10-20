@@ -27,7 +27,7 @@ $livro = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Importa o arquivo CSS para estilizar a página. -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 
     <!-- Define o título da aba do navegador. -->
     <title>Termos de Empréstimo</title>
@@ -95,5 +95,4 @@ $livro = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </main>
     </body>
-
 </html>

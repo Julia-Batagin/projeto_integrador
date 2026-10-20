@@ -8,7 +8,7 @@ require_once __DIR__ . '/../database/connect.php';
 
 // Verifica se o administrador está logado.
 if (!isset($_SESSION['admin_id'])) {
-    header("Location: /login/login.php");
+    header("Location: /projeto_integrador/login/login.php");
     exit;
 }
 
@@ -46,7 +46,7 @@ $resultado = $conexao->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 
     <title>Relatório de Empréstimos</title>
     <!-- Define o título que aparece na aba do navegador. -->

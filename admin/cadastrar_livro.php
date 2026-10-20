@@ -12,7 +12,7 @@ require_once __DIR__ . '/../database/connect.php';
 if (!isset($_SESSION['admin_id'])) {
 
     // Manda o usuário para a página de login.
-    header("Location: /login/login.php");
+    header("Location: /projeto_integrador/login/login.php");
     exit;
 }
 
@@ -88,7 +88,7 @@ if (isset($_POST['cadastrar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Importa o arquivo CSS do projeto. -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 
     <title>Cadastrar Livro</title>
 
@@ -228,9 +228,6 @@ if (isset($_POST['cadastrar'])) {
 
 
         </div>
-
     </main>
-
 </body>
-
 </html>
