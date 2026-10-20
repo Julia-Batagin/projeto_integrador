@@ -34,7 +34,7 @@ $stmt->execute([
 
 
 // Depois de excluir o livro, volta para o painel do administrador.
-header("Location: painel.php");
+header("Location: /projeto_integrador/painel.php");
 
 exit;
 

@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <p>Já possui uma conta?</p>
 
             <!-- Link para abrir a página de login. -->
-            <a href="/login/login.php">
+            <a href="/projeto_integrador/login/login.php">
                 Voltar para o login
             </a>
 

@@ -36,7 +36,6 @@ $resultado = $conexao->query($sql);
 
 ?>
 
-```html
 <!DOCTYPE html>
 <!-- Informa ao navegador que estamos usando HTML5. -->
 
@@ -91,19 +90,6 @@ $resultado = $conexao->query($sql);
                     <div class="resultado-relatorio">
                         <!-- Cria um cartão para mostrar os dados de um empréstimo. -->
 
-                        <p>
-                            <!-- Exibe o nome do usuário. -->
-
-                            <strong>Usuário:</strong>
-
-                            <?php
-                            // Mostra o nome do usuário.
-                            // htmlspecialchars evita que o conteúdo seja interpretado como HTML.
-                            echo htmlspecialchars($emprestimo['nome_usuario']);
-                            ?>
-                        </p>
-
-                        <p>
                             <!-- Exibe o e-mail do usuário. -->
 
                             <strong>E-mail:</strong>
@@ -184,10 +170,8 @@ $resultado = $conexao->query($sql);
             }
             ?>
 
-            <a href="painel.php" class="voltar">
+            <a href="painel.php" class= "voltar"> Voltar ao painel</a>
                 <!-- Cria um link para voltar ao painel do administrador. -->
-
-                Voltar ao Painel
 
         </div>
     </main>

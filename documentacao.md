@@ -1,71 +1,43 @@
-# Projeto Integrador
+# Protótipo
 
-## CRUD Utilizando HTML + PHP + POSTGRESQL
+```mermaid
+graph TD
+A[Biblioteca Digital EntreCapítulos] --> B[Área do Usuário]
+A --> C[Área Administrativa]
 
-### Objetivos:
- 
-# Projeto Integrador
+B --> B1[Cadastrar Conta]
+B --> B2[Fazer Login]
+B --> B3[Consultar Livros]
+B --> B4[Pesquisar por Título ou Autor]
+B --> B6[Alugar Livro]
+B --> B7[Sair da Conta]
 
-## Biblioteca Digital Utilizando HTML + PHP + POSTGRESQL
+B1 --> D[Validar Dados]
+D --> E[(Banco de Dados PostgreSQL)]
+B2 --> F[Verificar E-mail e Senha]
+F --> G[Criar Sessão do Usuário]
+G --> B3
 
-### Objetivos:
+B6 --> H{Livro Disponível?}
+H -->|Sim| I[Registrar Empréstimo]
+I --> J[Atualizar Quantidade Disponível]
+J --> E
+H -->|Não| K[Informar Indisponibilidade]
 
-1. Cadastrar usuários:
-- Receber Nome Completo , E-mail, Senha, Nascimento.
-- Validar os dados informados.
-- Salvar os usuários no banco de dados.
+C --> C1[Login do Administrador]
+C1 --> C2[Painel Administrativo]
+C2 --> C3[Cadastrar Livros]
+C2 --> C4[Consultar Livros]
+C2 --> C5[Editar Livros]
+C2 --> C6[Excluir Livros]
+C2 --> C7[Consultar Usuários]
+C2 --> C8[Relatório de Empréstimos]
+C2 --> C9[Sair da Conta]
 
-2. Fazer login dos usuários:
-- Receber E-mail e Senha.
-- Verificar os dados cadastrados no banco.
-- Criar uma sessão para o usuário.
-
-3. Cadastrar livros:
-- Receber Título, Autor, Categoria, Ano, Quantidade e Imagem da capa.
-- Salvar os livros no banco de dados.
-
-4. Listar livros:
-- Mostrar os livros cadastrados.
-- Exibir Título, Autor, Categoria, Ano e Imagem.
-- Permitir visualizar os livros disponíveis.
-
-5. Pesquisar livros:
-- Permitir pesquisar livros pelo Título ou Autor.
-- Mostrar os resultados encontrados.
-
-6. Visualizar informações do livro:
-- Exibir as informações completas do livro selecionado.
-- Mostrar a capa e os dados cadastrados.
-
-7. Editar livros:
-- Permitir alterar as informações dos livros cadastrados.
-- Atualizar os dados no banco de dados.
-
-8. Excluir livros:
-- Permitir excluir livros cadastrados.
-- Solicitar confirmação antes da exclusão.
-
-9. Criar área administrativa:
-- Criar acesso restrito para o administrador.
-- Permitir gerenciar os livros cadastrados.
-- Permitir visualizar e gerenciar os usuários.
-
-10. Controlar acesso:
-- Verificar se o usuário está logado.
-- Restringir o acesso às páginas administrativas.
-- Criar diferentes permissões para usuário e administrador.
-
-11. Fazer logout:
-- Encerrar a sessão do usuário.
-- Encerrar a sessão do administrador.
-- Redirecionar para a página de login.
-
-12. Testar o sistema:
-- Testar cadastro.
-- Testar login.
-- Testar cadastro de livros.
-- Testar pesquisa.
-- Testar edição.
-- Testar exclusão.
-- Testar permissões.
-- Testar logout.
+C3 --> E
+C4 --> E
+C5 --> E
+C6 --> E
+C7 --> E
+C8 --> E
+```
