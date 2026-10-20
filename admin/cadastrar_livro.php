@@ -142,66 +142,35 @@ if (isset($_POST['cadastrar'])) {
 
                 required = torna o preenchimento obrigatório.
                 -->
-                <input
-                    type="text"
-                    name="titulo"
-                    id="titulo"
-                    required
-                >
-
+               <input type="text" name="titulo" id= "titulo" required> 
 
                 <!-- Campo do autor. -->
                 <label for="autor">
                     Autor:
                 </label>
 
-                <input
-                    type="text"
-                    name="autor"
-                    id="autor"
-                    required
-                >
-
+                <input type="text" name="autor" id="autor" required>
 
                 <!-- Campo do gênero. -->
                 <label for="genero">
                     Gênero:
                 </label>
 
-                <input
-                    type="text"
-                    name="genero"
-                    id="genero"
-                    required
-                >
-
+                <input type="text" name="genero" id="genero" required>
 
                 <!-- Campo do ano. -->
                 <label for="ano">
                     Ano:
                 </label>
 
-                <input
-                    type="number"
-                    name="ano"
-                    id="ano"
-                    required
-                >
-
+                <input type="number" name="ano" id="ano" required>
 
                 <!-- Campo da quantidade de livros. -->
                 <label for="quantidade">
                     Quantidade:
                 </label>
 
-                <input
-                    type="number"
-                    name="quantidade"
-                    id="quantidade"
-                    min="0"
-                    required
-                >
-
+                <input type="number" name="quantidade" id="quantidade" min="0" required>
 
                 <!--
                 Botão que envia o formulário.

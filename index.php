@@ -8,13 +8,14 @@
     <title>Biblioteca Virtual</title>
 
     <link rel="stylesheet" href="/projeto_integrador/style/style.css">
+  
 </head>
 
 <body>
 
     <header>
 
-        <h1>EntreCapítulos</h1>
+        <h1>EntreCapítulos</h1> 
 
         <p>Seu espaço para descobrir novos livros.</p>
 
@@ -25,6 +26,8 @@
         <section class="inicio">
 
             <h2>Bem-vindo à nossa biblioteca!</h2>
+
+            <img src="assets/logo.png" style="width: 150px; height: auto;">
 
             <p>
                 Encontre livros, explore novos conhecimentos e tenha

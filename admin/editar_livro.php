@@ -150,12 +150,9 @@ if (isset($_POST['editar'])) {
                     value coloca no campo o título
                     que já está salvo no banco.
                 -->
-                <input
-                    type="text"
-                    name="titulo"
-                    id="titulo"
-                    value="<?php echo $livro['titulo']; ?>"
-                    required
+                <input type="text" name="titulo" id="titulo" 
+                value="<?php echo $livro['titulo']; ?>"
+                required
                 >
 
 
@@ -171,10 +168,7 @@ if (isset($_POST['editar'])) {
                     O valor atual do autor é colocado
                     automaticamente no campo.
                 -->
-                <input
-                    type="text"
-                    name="autor"
-                    id="autor"
+                <input type="text" name="autor" id="autor"
                     value="<?php echo $livro['autor']; ?>"
                     required
                 >
@@ -192,10 +186,7 @@ if (isset($_POST['editar'])) {
                     O valor atual é preenchido
                     automaticamente.
                 -->
-                <input
-                    type="text"
-                    name="genero"
-                    id="genero"
+                <input type="text" name="genero" id="genero"
                     value="<?php echo $livro['genero']; ?>"
                     required
                 >
@@ -211,10 +202,7 @@ if (isset($_POST['editar'])) {
                     O ano atual do livro é colocado
                     automaticamente no campo.
                 -->
-                <input
-                    type="number"
-                    name="ano"
-                    id="ano"
+                <input type="number" name="ano" id="ano"
                     value="<?php echo $livro['ano']; ?>"
                     required
                 >
@@ -233,10 +221,7 @@ if (isset($_POST['editar'])) {
                     min="0" impede que o usuário
                     coloque uma quantidade menor que zero.
                 -->
-                <input
-                    type="number"
-                    name="quantidade"
-                    id="quantidade"
+                <input type="number" name="quantidade" id="quantidade"
                     value="<?php echo $livro['quantidade']; ?>"
                     min="0"
                     required
