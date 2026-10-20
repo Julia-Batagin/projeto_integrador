@@ -357,7 +357,7 @@ cd projeto_integrador
 Para gerar um novo backup do banco PostgreSQL, execute o comando abaixo na raiz do projeto:
 
 ```bash
-pg_dump -h 192.168.10.30 -U biblioteca_user -d biblioteca -F p -f database/dump.sql
+pg_dump -h localhost:8000 -U biblioteca_user -d biblioteca -F p -f database/dump.sql
 ```
 
 Nesse comando, são utilizados o endereço do servidor, o usuário e o nome do banco de dados configurados para o projeto.
@@ -410,7 +410,7 @@ CREATE DATABASE biblioteca OWNER biblioteca_user;
 Depois de preparar o banco de destino, o arquivo SQL pode ser importado com o comando:
 
 ```bash
-psql -h 192.168.10.30 -U biblioteca_user -d biblioteca -f database/dump.sql
+psql -h localhost:8000 -U biblioteca_user -d biblioteca -f database/dump.sql
 ```
 
 A restauração pode apresentar conflitos caso as tabelas já existam ou o usuário não tenha as permissões necessárias. Para evitar interferir nos dados utilizados pela aplicação, prefira testar a restauração em um banco separado antes de realizá-la no banco principal.
@@ -434,7 +434,7 @@ Antes de acessar o sistema EntreCapítulos, verifique se o ambiente possui:
 
 O projeto está disponível no endereço abaixo:
 
-**http://192.168.10.30/projeto_integrador**
+**http://localhost:8000/projeto_integrador**
 
 Para acessar, abra o navegador e informe esse endereço. O computador precisa estar conectado a uma rede que consiga alcançar o servidor.
 
