@@ -7,7 +7,7 @@
 
     <title>Biblioteca Virtual</title>
 
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/projeto_integrador/style/style.css">
 </head>
 
 <body>
@@ -31,15 +31,15 @@
                 acesso à nossa biblioteca de forma simples e rápida.
             </p>
 
-            <a href="/login/login.php" class="botao">Login</a>
+            <a href="/projeto_integrador//login/login.php" class="botao">Login</a>
 
             <br><br>
 
-            <a href="/login/cadastrar.php" class="botao">Cadastrar</a>
+            <a href="/projeto_integrador//login/cadastrar.php" class="botao">Cadastrar</a>
 
             <br><br>
 
-            <a href="/admin/login.php" class="botao">Área do Administrador</a>
+            <a href="/projeto_integrador//admin/login.php" class="botao">Área do Administrador</a>
 
         </section>
 
