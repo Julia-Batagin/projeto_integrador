@@ -3,6 +3,7 @@
 session_start();
 
 // O __DIR__ : Mostra a pasta onde este arquivo está localizado.
+//Está requerindo o connect, dentro do database
 require_once __DIR__ . '/../database/connect.php';
 
 
