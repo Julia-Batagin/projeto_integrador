@@ -336,6 +336,13 @@ projeto_integrador/
 
 ## 9. Como executar o projeto
 
+## Clone o repositório e entre na pasta:
+
+```bash
+git clone LINK_REPOSITORIO
+cd projeto_integrador
+```
+
 ### Requisitos
 
 - PHP instalado e configurado com suporte ao PostgreSQL.
