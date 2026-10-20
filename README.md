@@ -339,7 +339,7 @@ projeto_integrador/
 ## Clone o repositório e entre na pasta:
 
 ```bash
-git clone LINK_REPOSITORIO
+git clone https://github.com/Julia-Batagin/projeto_integrador.git
 cd projeto_integrador
 ```
 
