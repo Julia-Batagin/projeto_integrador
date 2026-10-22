@@ -2,8 +2,7 @@
 
 session_start();
 
-require_once __DIR__ . '/projeto_integrador/includes/functions.php';
-require_once __DIR__ . '/projeto_integrador/database/connect.php';
+require_once __DIR__ . '/../database/connect.php';
 
 
 // Verifica se existe um administrador logado.
