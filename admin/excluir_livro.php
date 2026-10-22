@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -19,10 +20,30 @@ if (!isset($_SESSION['admin_id'])) {
 $id = $_GET['id'];
 
 
-// Cria o comando SQL para excluir o livro.
-// O :id será substituído pelo ID do livro.
-$sql = "DELETE FROM livros WHERE id = :id";
+// Verifica se o livro possui empréstimos registrados.
+$sql = "SELECT id FROM emprestimos WHERE livro_id = :id";
 
+$stmt = $conexao->prepare($sql);
+
+$stmt->execute([
+    'id' => $id
+]);
+
+
+// Se encontrar algum empréstimo, impede a exclusão.
+if ($stmt->fetch()) {
+
+    echo "<script>
+        alert('Não é possível excluir este livro, pois existem empréstimos registrados.');
+        window.location.href = '/projeto_integrador/admin/painel.php';
+    </script>";
+
+    exit;
+}
+
+
+// Cria o comando SQL para excluir o livro.
+$sql = "DELETE FROM livros WHERE id = :id";
 
 $stmt = $conexao->prepare($sql);
 
@@ -33,8 +54,11 @@ $stmt->execute([
 ]);
 
 
-// Depois de excluir o livro, volta para o painel do administrador.
-header("Location: /projeto_integrador/admin/painel.php");
+// Exibe uma mensagem de sucesso e volta para o painel.
+echo "<script>
+    alert('Livro excluído com sucesso!');
+    window.location.href = '/projeto_integrador/admin/painel.php';
+</script>";
 
 exit;
 
